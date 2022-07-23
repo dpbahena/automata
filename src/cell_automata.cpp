@@ -85,7 +85,7 @@ void nature::DisplayMatrix::mapMatrix(){
         if(!scan_matrix_ready){
             int width_factor;
             if(pattern.compressed){
-                matrix_factor = 60; //32; // DEFAULT so a graph can be compressed 32 times the height of the screen
+                matrix_factor = 60; //60; // DEFAULT so a graph can be compressed 60 times the height of the screen
                 
                 width_factor = 1;   // Ideal for compression .. increase efficiency. The width stays the same. Width is not needed for compression
                                     // in compression, the height multiplied by matrix factor is what is needed to get a good compression
@@ -313,6 +313,8 @@ void nature::DisplayMatrix::drawDot(unsigned long color, int x, int y, int radiu
 
 void nature::DisplayMatrix::drawText(){
     
+    //auto theFont    = XLoadFont(display_, "10x20" );   // the font are hard coded for info go to: https://www.oreilly.com/library/view/x-window-system/9780937175149/Chapter05.html
+    //XSetFont(display_, DefaultGC(display_,screen_), theFont);     // use alias names only. xlsfonts in terminal for font lists. More info:  https://www.math.utah.edu/~beebe/fonts/X-Window-System-fonts.html
     XSetForeground(display_, DefaultGC(display_, screen_), 0xff0000);
     float tab_factor = 0.10f;   // info position on left side
     float tab_factor_2 = 6.5f;  // info position on right side
