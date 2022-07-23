@@ -40,7 +40,7 @@ Sometimes the shape does not occuppy the whole width of the screen. For example 
 
 ./cellautomata 800 1057 1599 40        
 
-This way, the time to produce a matrix 40 times as the display dimensions is reduce. 
+This way, the time to produce a matrix 40 times the display dimensions is reduce. 
 
 
 

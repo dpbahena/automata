@@ -73,7 +73,7 @@ void nature::DisplayMatrix::mapMatrix(){
     }else if(rule >=256 && rule <=2186){
         pattern.is_ternary = true;
     }else if (rule >= 2187 && rule <= 4294967295/*65535*/){
-        pattern.is_mobile_16bit = true;
+        pattern.is_mobile = true;
     }
 
 
@@ -207,7 +207,7 @@ void nature::DisplayMatrix::mapMatrix(){
         //cout << "displayrows : " << rows <<   "cols : " << cols << endl;
         drawText();
         pattern.is_ternary = false;
-    }else if(pattern.is_mobile_16bit && !pattern.compressed){      // mobile_16 bits  
+    }else if(pattern.is_mobile && !pattern.compressed){      // mobile_16 bits  
         for(int i = 0; i < height - offset;  i = i + dot_size, indexi++){    //iterates every row 
 
             for(int j = 0; j < width - offset; j = j + dot_size, indexj++){    // iterates every column
@@ -234,9 +234,9 @@ void nature::DisplayMatrix::mapMatrix(){
         //cout << "indexi rows : " << indexi << "indexj cols : " << indexj << endl;
         //cout << "displayrows : " << rows <<   "cols : " << cols << endl;
         drawText();
-        pattern.is_mobile_16bit = false;
+        pattern.is_mobile = false;
 
-    }else if(pattern.is_mobile_16bit && pattern.compressed){
+    }else if(pattern.is_mobile && pattern.compressed){
         for(int i = 0; i < height - offset;  i = i + dot_size, indexi++){    //iterates every row 
             bool skip = false;
             for(int j = 0; j < width - offset; j = j + dot_size, indexj++){    // iterates every column
@@ -290,7 +290,7 @@ void nature::DisplayMatrix::mapMatrix(){
         //cout << "indexi rows : " << indexi << "indexj cols : " << indexj << endl;
         //cout << "displayrows : " << rows <<   "cols : " << cols << endl;
         drawText();
-        pattern.is_mobile_16bit = false;
+        pattern.is_mobile = false;
         //pattern.compressed = false;      
     }
 }
@@ -705,7 +705,7 @@ void nature::MatrixPattern::getShape(ArrayXXf &matrix, stats &pattern){
 
     }else if(rule >= 2087 && rule <= 65535){   //16 bits rules
         std::cout <<  "16-bit MOBILE-AUTOMATA 2187 - 65535" << std::endl;
-        pattern.is_mobile_16bit = true;
+        pattern.is_mobile = true;
         matrix(0,cols/2) = 2;   //initial state of the matrix (dot on white cell, 3 is a dot on a black cell)
         pattern.most_left = cols/2;
         pattern.most_right = cols/2;
@@ -809,7 +809,7 @@ void nature::MatrixPattern::getShape(ArrayXXf &matrix, stats &pattern){
         std::cout <<  "32-bit MOBILE-AUTOMATA  65536 - 4billion" << std::endl;
         bin32 = dec_to_32bit();
         std::cout << "32 bin: " << bin32 << std::endl;
-        pattern.is_mobile_16bit = true;
+        pattern.is_mobile = true;
         matrix(0,cols/2) = 2;   //initial state of the matrix (dot on white cell, 3 is a dot on a black cell)
         pattern.most_left = cols/2;
         pattern.most_right = cols/2;
@@ -975,7 +975,7 @@ void nature::MatrixPattern::getShape(ArrayXXf &matrix, stats &pattern){
         std::cout <<  "GENERALIZED 32-bit MOBILE-AUTOMATA  65536 - 4billion" << std::endl;
         bin32 = dec_to_32bit();
         std::cout << "32 bin: " << bin32 << std::endl;
-        pattern.is_mobile_16bit = true;
+        pattern.is_mobile = true;
         matrix(0,cols/2) = 2;   //initial state of the matrix (dot on white cell, 3 is a dot on a black cell)
         pattern.most_left = cols/2;
         pattern.most_right = cols/2;

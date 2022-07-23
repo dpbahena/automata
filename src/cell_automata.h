@@ -38,7 +38,7 @@ struct stats{
             float matrix_maxCoef;
             bool is_8bit = false;
             bool is_ternary = false;
-            bool is_mobile_16bit = false;
+            bool is_mobile = false;  //bool is_mobile_16bit = false;
             bool is_16bit = false;
             bool is_Generalize_Mobile = true;
             bool compressed = false;
