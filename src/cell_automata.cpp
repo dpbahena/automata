@@ -172,9 +172,9 @@ void nature::DisplayMatrix::mapMatrix(){
                 
                 if(matrix(indexi,indexj)==0){
                     //std::cout << "at matrix[" << indexi << ", " << indexj <<"] = " << matrix(indexi, indexj) << "the i is : " << i << "and : j "<< j << std::endl;
-                    drawRect(colorWhite,j,i,dot_size,dot_size);
+                    drawRect(color5.toneYellow,j,i,dot_size,dot_size);
                 }else {
-                    drawRect(colorBlack,j,i,dot_size,dot_size);
+                    drawRect(color5.tonePurple,j,i,dot_size,dot_size);
                 }
             }
             indexj=start_column;
@@ -192,12 +192,12 @@ void nature::DisplayMatrix::mapMatrix(){
                 
                 if(matrix(indexi,indexj)==0){
                     //std::cout << "at matrix[" << indexi << ", " << indexj <<"] = " << matrix(indexi, indexj) << "the i is : " << i << "and : j "<< j << std::endl;
-                    drawRect(colorWhite,j,i,dot_size,dot_size);
+                    drawRect(color2.purple,j,i,dot_size,dot_size);
                 }else if (matrix(indexi,indexj)==1){
                     //std::cout << "at matrix[" << indexi << ", " << indexj <<"] = " << matrix(indexi, indexj) << "the j is : " << j << std::endl;
-                    drawRect(colorGrey,j,i,dot_size,dot_size);
+                    drawRect(color2.green,j,i,dot_size,dot_size);
                 }else {
-                    drawRect(colorBlack,j,i,dot_size,dot_size);
+                    drawRect(color2.orange,j,i,dot_size,dot_size);
                 }
             }
             indexj=start_column;
@@ -315,7 +315,7 @@ void nature::DisplayMatrix::drawText(){
     
     //auto theFont    = XLoadFont(display_, "10x20" );   // the font are hard coded for info go to: https://www.oreilly.com/library/view/x-window-system/9780937175149/Chapter05.html
     //XSetFont(display_, DefaultGC(display_,screen_), theFont);     // use alias names only. xlsfonts in terminal for font lists. More info:  https://www.math.utah.edu/~beebe/fonts/X-Window-System-fonts.html
-    XSetForeground(display_, DefaultGC(display_, screen_), 0xff0000);
+    XSetForeground(display_, DefaultGC(display_, screen_), 0x000000);
     float tab_factor = 0.10f;   // info position on left side
     float tab_factor_2 = 6.5f;  // info position on right side
 
@@ -365,17 +365,22 @@ void nature::DisplayMatrix::drawText(){
         XDrawString(display_,window_,DefaultGC(display_, screen_),width * tab_factor,80, str.c_str(), str.size());
         ss.str(std::string());  // clears buffer
 
-        ss << "UP, DOWN: Change resolution.";
+        ss << "Press 'H' to Enter SPECIFIC GENERALIZE RULE #";
         str = ss.str();
         XDrawString(display_,window_,DefaultGC(display_, screen_),width * tab_factor,100, str.c_str(), str.size());
         ss.str(std::string());  // clears buffer
-        ss << "LEFT, RIGHT: change the shape.";
+
+        ss << "UP, DOWN: Change resolution.";
         str = ss.str();
         XDrawString(display_,window_,DefaultGC(display_, screen_),width * tab_factor,120, str.c_str(), str.size());
         ss.str(std::string());  // clears buffer
-        ss << "SPACE : jump to another shape (go to Terminal)";
+        ss << "LEFT, RIGHT: change the shape.";
         str = ss.str();
         XDrawString(display_,window_,DefaultGC(display_, screen_),width * tab_factor,140, str.c_str(), str.size());
+        ss.str(std::string());  // clears buffer
+        ss << "SPACE : jump to another shape (go to Terminal)";
+        str = ss.str();
+        XDrawString(display_,window_,DefaultGC(display_, screen_),width * tab_factor,160, str.c_str(), str.size());
 
     }
     
@@ -409,7 +414,7 @@ void nature::DisplayMatrix::drawText(){
     ss.str(std::string());  // clears buffer
     ss << "ESC to exit";
     str = ss.str();
-    XDrawString(display_,window_,DefaultGC(display_, screen_),width * tab_factor,160, str.c_str(), str.size());
+    XDrawString(display_,window_,DefaultGC(display_, screen_),width * tab_factor,180, str.c_str(), str.size());
 
     // pattern statistics
     ss.str(std::string());  // clears buffer
@@ -473,11 +478,12 @@ int nature::DisplayMatrix::user_input_rule(){
     unsigned int input_rule;
     std::cout << " Enter new rule 0 - 65535 :";
     std::cin >> input_rule;
-    std::cin.ignore(10, '\n');  // clears buffer
+    std::cin.ignore(100, '\n');  // clears buffer
     
     return input_rule;
 
 }
+
 
 // MakePatterns class ------------------------>
 /*
@@ -623,9 +629,14 @@ void nature::MakePatterns::handle_event(){
             break;
         case GENERALIZED:
             dp_.pattern.is_Generalize_Mobile = true;
-            if(dp_.pattern.compressed) break;  // do nothing in when a graph is compressed mode
+            //if(dp_.pattern.compressed) break;  // do nothing in when a graph is compressed mode
             srand((unsigned)time(NULL));
-            dp_.rule = ruleTotEnds + (rand() % ruleEnd);
+            dp_.rule = ruleTotEnds + 1 + (rand() % ruleEnd);
+            dp_.reDraw();
+            break;
+        case SPEC_GENERALIZD:
+            dp_.pattern.is_Generalize_Mobile = true;  
+            dp_.rule = dp_.user_input_rule();
             dp_.reDraw();
             break;
         case ESC: std::cout << "Exiting" << std::endl;

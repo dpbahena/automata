@@ -43,12 +43,98 @@ Sometimes the shape does not occuppy the whole width of the screen. For example 
 This way, the time to produce a matrix 40 times the display dimensions is reduce. 
 
 
+ELEMENTARY RULES  0 - 255    based on 8-bit binary
+
+ See examples #1 and #2
+
+ or
+
+ press "E" to for random rule
+
+ or 
+ 
+ press "SPACE" to type specific rule.
+
+TOTALISTIC RULES  256 - 2186   base 3
+
+See examples #1 and #2 or press "T" to for random rule or  press "SPACE" to type specific rule.
+
+MOBILE-16 BITS     (I started it from 2187 to 65535 or 2^16)
+
+See examples #1 and #2 or press "N" to for random rule or  press "SPACE" to type specific rule.
+
+Press "C" for COMPRESSED mode (compressed mode only works in certain shapes)
+Examples from "A New Kind of Science" by Stephen Wolfram:
+
+Rule # 42927
+Rule # 55843
+Rule # 27125
+Rule # 44971
+Rule # 19255
+Rule # 50723
+Rule # 55815   COMPRESSED-MODE
+Rule # 58163   COMPRESSED-MODE
+
+
+MOBILE-32 BITS     (I started it from 65536 to 4,294,967,295  or 2^32)
+
+See examples #1 and #2 or press "M" to for random rule or  press "SPACE" to type specific rule.
+
+Press "C" for COMPRESSED mode (compressed mode only works in certain shapes)
+Examples from "A New Kind of Science" by Stephen Wolfram:
+
+See pages 73, 74, 75;
+
+Rule # 2442340644  press 'C' for Compressed mode     
+Rule # 1936145189  press 'C' for Compressed mode
+Rule # 1808763288  press 'C' for Compressed mode
+
+
+Other interesting shapes:
+
+Rule # 1936145421  
+Rule # 1936145551
+Rule # 1936148996  press 'C' for Compressed mode
+Rule # 841165963   press 'C' for Compressed mode
+Rule # 1502583525
 
 
 
 
 
 
+GENERALIZED MOBILE
+
+Option 1:
+
+Press "G" for random mode
+
+or
+
+Press "H" for specific rule
+
+Interesting rules:
+from "A New Kind of Science" by Stephen Wolfram 
+
+Rule # 267718719    page 76
+Rule # 2756018441   page 77
+Rule # 3378589909   page 77
+Rule # 4096999591   page 77
+Rule #  507100781   page 77
+Rule # 3635480489   page 77
+Rule # 2178553569   page 77
+Rule # 1369713987   page 77
+Rule # 2174551651   page 77
+
+
+Another one is :   Rule # 2174551975 
+
+COMPRESS MODE: Makes no sense in Generalized Mobiles
+
+
+
+Note:  You can find your own interesting shapes, the problem is there are more than 4 billions to look from!!
+Good Luck!
 
 
 

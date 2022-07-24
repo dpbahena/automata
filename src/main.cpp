@@ -6,6 +6,7 @@ void shifting(unsigned int dec);
 int main(int args, char **argv){
     int width, height, factor;
     unsigned int rule;
+    bool generalized;
     char * end;
     
     if(args == 5){
@@ -15,9 +16,11 @@ int main(int args, char **argv){
         factor = atoi(argv[4]);
         
         
+        
+        
     }else{
-        std::cout << "Missing Parameters. Usage: ./cellautomata <width> <height> <rule> <factor>-- Max width = 1857   Max height = 1057  rule range 0 - 4294967295 factor 2 - 40"  << std::endl;
-        std::cout << "************************Using default values :   ./cellautomata 1857 1057 1599 6   " << std::endl;
+        std::cout << "Missing Parameters. Usage: ./cellautomata <width> <height> <rule> <factor> <generalized>-- Max width = 1857   Max height = 1057  rule range 0 - 4294967295 factor 2 - 40 "  << std::endl;
+        std::cout << "************************Using default values :   ./cellautomata 1857 1057 1599 6 " << std::endl;
         width = 1857;
         height = 1057;
         rule = 1599;
