@@ -134,7 +134,7 @@ COMPRESS MODE: Makes no sense in Generalized Mobiles
 
 
 Note:  You can find your own interesting shapes, the problem is there are more than 4 billions to look from!!
-Good Luck!
+Good Luck!!
 
 
 
