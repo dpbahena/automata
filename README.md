@@ -1,6 +1,6 @@
 # automata
 
-Linux/ubuntu
+<h1>Linux/ubuntu</h1>
 
 
 1. Create a directory 
@@ -16,15 +16,15 @@ Linux/ubuntu
 
 That's it!
 
-To run the program:
+<h1>To run the program:</h1>
 
-Option 1:   You can access ramdomly all patterns from rule 0 to 2^32. Once, you are in the program, follow the on-screen instructions.
-            When accessing a particular rule you can press SPACE  (Sorry, you have to click back/forth from terminal to window)
+<h2>Option 1:</h2>   <h3>You can access ramdomly all patterns from rule 0 to 2^32. Once, you are in the program, follow the on-screen instructions.
+            When accessing a particular rule you can press SPACE  (Sorry, you have to click back/forth from terminal to window) </h3>
 
  ./cellautomata 
 
 
-Option 2:   You have more control on the window size and allows you to make the matrix bigger so you have more scanning capability with more depth.
+<h2>Option 2:</h2>   <h3>You have more control on the window size and allows you to make the matrix bigger so you have more scanning capability with more depth.</h3>
 
 ./cellautomata <display width> <display hight> <rule> <matrix-multiplier>
              
@@ -34,7 +34,7 @@ Example 1:
 
 This command line the rule is 1635 and makes the data matrix 40 times the width and 40 times the height. 
 
-Example 2: 
+Example 2:
 
 Sometimes the shape does not occuppy the whole width of the screen. For example rule, 1599.  You may use:
 
@@ -43,7 +43,7 @@ Sometimes the shape does not occuppy the whole width of the screen. For example 
 This way, the time to produce a matrix 40 times the display dimensions is reduce. 
 
 
-ELEMENTARY RULES  0 - 255    based on 8-bit binary
+    <h2>ELEMENTARY RULES  0 - 255    based on 8-bit binary</h2>
 
  See examples #1 and #2
 
@@ -55,11 +55,11 @@ ELEMENTARY RULES  0 - 255    based on 8-bit binary
  
  press "SPACE" to type specific rule.
 
-TOTALISTIC RULES  256 - 2186   base 3
+   <h2>TOTALISTIC RULES  256 - 2186   base 3</h2>
 
 See examples #1 and #2 or press "T" to for random rule or  press "SPACE" to type specific rule.
 
-MOBILE-16 BITS     (I started it from 2187 to 65535 or 2^16)
+    <h2>MOBILE-16 BITS     (I started it from 2187 to 65535 or 2^16)</h2>
 
 See examples #1 and #2 or press "N" to for random rule or  press "SPACE" to type specific rule.
 
@@ -76,7 +76,7 @@ Rule # 55815   COMPRESSED-MODE
 Rule # 58163   COMPRESSED-MODE
 
 
-MOBILE-32 BITS     (I started it from 65536 to 4,294,967,295  or 2^32)
+    <h2>MOBILE-32 BITS     (I started it from 65536 to 4,294,967,295  or 2^32)</h2>
 
 See examples #1 and #2 or press "M" to for random rule or  press "SPACE" to type specific rule.
 
@@ -103,7 +103,7 @@ Rule # 1502583525
 
 
 
-GENERALIZED MOBILE
+    <h2>GENERALIZED MOBILE</h2>
 
 Option 1:
 
