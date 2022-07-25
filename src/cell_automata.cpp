@@ -478,6 +478,7 @@ int nature::DisplayMatrix::user_input_rule(){
     
     unsigned int input_rule;
     if(pattern.is_Generalize_Mobile){
+        std::cout << "        GENERALIZED MOBILES " << std::endl;
         std::cout << "Hardcoded rules to make your enter these rules easier: " << std::endl;
         std::cout << "0: Rule # 267718719" << std::endl;
         std::cout << "1: Rule # 2756018441" << std::endl;
@@ -489,6 +490,10 @@ int nature::DisplayMatrix::user_input_rule(){
         std::cout << "7: Rule # 1369713987" << std::endl;
         std::cout << "8: Rule # 2174551651" << std::endl;
         std::cout << "9: Rule # 2174551975" << std::endl;
+        std::cout << "10: Rule # 507100823  -- weird" << std::endl;
+        std::cout << "11: Rule # 507100809" << std::endl;
+        std::cout << "12: Rule # 507100605" << std::endl;
+        std::cout << "13: Rule # 507100311  -- weird" << std::endl;
         std::cout << "Or enter the full rule number yourself below ..." << std::endl;
        
     
@@ -516,8 +521,76 @@ int nature::DisplayMatrix::user_input_rule(){
             input_rule = 2174551651;
         else if(input_rule == 9)
             input_rule = 2174551975;
+        else if(input_rule == 10)
+            input_rule = 507100823;
+        else if(input_rule == 11)
+            input_rule == 507100809;
+        else if(input_rule == 12)
+            input_rule == 507100605;
+        else if(input_rule == 13)
+            input_rule = 507100311;
         
         
+        
+    }else if(pattern.is_mobile){
+        std::cout << "        MOBILES 16bit or 32bit " << std::endl;
+        std::cout << "Hardcoded rules to make your enter these rules easier: " << std::endl;
+        std::cout << "0: Rule # 42927" << std::endl;
+        std::cout << "1: Rule # 55843" << std::endl;
+        std::cout << "2: Rule # 27125" << std::endl;
+        std::cout << "3: Rule # 44971" << std::endl;
+        std::cout << "4: Rule # 19255" << std::endl;
+        std::cout << "5: Rule # 50723" << std::endl;
+        std::cout << "6: Rule # 55815   -- it can be compressed" << std::endl;
+        std::cout << "7: Rule # 58163   -- it can be compressed" << std::endl;
+        std::cout << "8: Rule # 2442340644 -- it can be compressed" << std::endl;
+        std::cout << "9: Rule # 1936145189 -- it can be compressed" << std::endl;
+        std::cout << "10: Rule # 1808763288 -- it can be compressed" << std::endl;
+        std::cout << "11: Rule # 1936145421" << std::endl;
+        std::cout << "12: Rule # 1936145551" << std::endl;
+        std::cout << "13: Rule # 1936148996 -- it can be compressed" << std::endl;
+        std::cout << "14: Rule # 841165963  -- it can be compressed" << std::endl;
+        std::cout << "15: Rule # 1502583525"  << std::endl;
+        std::cout << "Or enter the full rule number yourself below ..." << std::endl;
+       
+    
+        
+        std::cout << " Enter new rule 0 -  :";
+        std::cin >> input_rule;
+        std::cin.ignore(100, '\n');  // clears buffer
+        if (input_rule == 0)
+            input_rule = 42927;
+        else if(input_rule == 1)
+            input_rule = 55843;
+        else if(input_rule == 2)
+            input_rule = 27125;
+        else if(input_rule == 3)
+            input_rule = 44971;
+        else if(input_rule == 4)
+            input_rule = 19255;
+        else if(input_rule == 5)
+            input_rule = 50723;
+        else if(input_rule == 6)
+            input_rule = 55815;
+        else if(input_rule == 7)
+            input_rule = 58163;
+        else if(input_rule == 8)
+            input_rule = 2442340644;
+        else if(input_rule == 9)
+            input_rule = 1936145189;
+        else if(input_rule == 10)
+            input_rule = 1808763288;
+        else if(input_rule == 11)
+            input_rule == 1936145421;
+        else if(input_rule == 12)
+            input_rule == 1936145551;
+        else if(input_rule == 13)
+            input_rule = 1936148996;
+        else if(input_rule == 14)
+            input_rule = 841165963;
+        else if(input_rule == 15)
+            input_rule = 1502583525;
+
     }else{
         std::cout << " Enter new rule 0 -  :";
         std::cin >> input_rule;
