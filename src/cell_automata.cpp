@@ -503,7 +503,7 @@ int nature::DisplayMatrix::user_input_rule(){
         
         std::cout << " Enter new rule  :";
         std::cin >> input_rule;
-        //std::cin.ignore(100, '\n');  // clears buffer
+        
         if (input_rule == 0)
             input_rule = 267718719;
         else if(input_rule == 1)
@@ -605,6 +605,7 @@ int nature::DisplayMatrix::user_input_rule(){
     }
 
     std::cin.ignore(100, '\n');  // clears buffer
+    
     return input_rule;
 
 }
