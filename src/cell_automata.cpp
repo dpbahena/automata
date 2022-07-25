@@ -234,7 +234,7 @@ void nature::DisplayMatrix::mapMatrix(){
         //cout << "indexi rows : " << indexi << "indexj cols : " << indexj << endl;
         //cout << "displayrows : " << rows <<   "cols : " << cols << endl;
         drawText();
-        pattern.is_mobile = false;
+        //pattern.is_mobile = false;
 
     }else if(pattern.is_mobile && pattern.compressed){
         for(int i = 0; i < height - offset;  i = i + dot_size, indexi++){    //iterates every row 
@@ -290,7 +290,7 @@ void nature::DisplayMatrix::mapMatrix(){
         //cout << "indexi rows : " << indexi << "indexj cols : " << indexj << endl;
         //cout << "displayrows : " << rows <<   "cols : " << cols << endl;
         drawText();
-        pattern.is_mobile = false;
+        //pattern.is_mobile = false;
         //pattern.compressed = false;      
     }
 }
@@ -477,8 +477,10 @@ void nature::DisplayMatrix::reDraw(){
 int nature::DisplayMatrix::user_input_rule(){
     
     unsigned int input_rule;
+    
     if(pattern.is_Generalize_Mobile){
         std::cout << "        GENERALIZED MOBILES " << std::endl;
+        std::cout << "-------------------------------------------------------" << std::endl;
         std::cout << "Hardcoded rules to make your enter these rules easier: " << std::endl;
         std::cout << "0: Rule # 267718719" << std::endl;
         std::cout << "1: Rule # 2756018441" << std::endl;
@@ -494,13 +496,14 @@ int nature::DisplayMatrix::user_input_rule(){
         std::cout << "11: Rule # 507100809" << std::endl;
         std::cout << "12: Rule # 507100605" << std::endl;
         std::cout << "13: Rule # 507100311  -- weird" << std::endl;
+        std::cout << "-------------------------------------------------------" << std::endl;
         std::cout << "Or enter the full rule number yourself below ..." << std::endl;
        
     
         
-        std::cout << " Enter new rule 0 -  :";
+        std::cout << " Enter new rule  :";
         std::cin >> input_rule;
-        std::cin.ignore(100, '\n');  // clears buffer
+        //std::cin.ignore(100, '\n');  // clears buffer
         if (input_rule == 0)
             input_rule = 267718719;
         else if(input_rule == 1)
@@ -534,6 +537,7 @@ int nature::DisplayMatrix::user_input_rule(){
         
     }else if(pattern.is_mobile){
         std::cout << "        MOBILES 16bit or 32bit " << std::endl;
+        std::cout << "-------------------------------------------------------" << std::endl;
         std::cout << "Hardcoded rules to make your enter these rules easier: " << std::endl;
         std::cout << "0: Rule # 42927" << std::endl;
         std::cout << "1: Rule # 55843" << std::endl;
@@ -551,13 +555,14 @@ int nature::DisplayMatrix::user_input_rule(){
         std::cout << "13: Rule # 1936148996 -- it can be compressed" << std::endl;
         std::cout << "14: Rule # 841165963  -- it can be compressed" << std::endl;
         std::cout << "15: Rule # 1502583525"  << std::endl;
+        std::cout << "---------------------------------------------------" << std::endl;
         std::cout << "Or enter the full rule number yourself below ..." << std::endl;
        
     
         
-        std::cout << " Enter new rule 0 -  :";
+        std::cout << " Enter new rule  :";
         std::cin >> input_rule;
-        std::cin.ignore(100, '\n');  // clears buffer
+        
         if (input_rule == 0)
             input_rule = 42927;
         else if(input_rule == 1)
@@ -592,11 +597,14 @@ int nature::DisplayMatrix::user_input_rule(){
             input_rule = 1502583525;
 
     }else{
-        std::cout << " Enter new rule 0 -  :";
+        std::cout << "        ELEMENTARY AND TERNARY PATTERNS ONLY " << std::endl;
+        std::cout << "-------------------------------------------------------\n\n\n" << std::endl;
+        std::cout << " Enter new rule 0 - 2186 :";
         std::cin >> input_rule;
-        std::cin.ignore(100, '\n');  // clears buffer
+        
     }
 
+    std::cin.ignore(100, '\n');  // clears buffer
     return input_rule;
 
 }
@@ -690,7 +698,7 @@ void nature::MakePatterns::handle_event(){
         case SPACE:
             dp_.pattern.is_Generalize_Mobile = false;
             if(dp_.pattern.compressed || dp_.scan_mode) break;  // do not allow to change shapes  when compressed mode or scan mode
-
+            std::cout << "state of mobile: " << dp_.pattern.is_mobile << std::endl;
             dp_.rule = dp_.user_input_rule();
             dp_.reDraw();
             break;
@@ -718,6 +726,7 @@ void nature::MakePatterns::handle_event(){
             break;
         case MOBILE16B:
             dp_.pattern.is_Generalize_Mobile = false;
+            dp_.pattern.is_mobile = true;
             if(dp_.pattern.compressed) break;  // do nothing in when a graph is compressed mode
             srand((unsigned)time(NULL));
             dp_.rule = rule16bstarts+ (rand() % rule16bends);
@@ -725,6 +734,7 @@ void nature::MakePatterns::handle_event(){
             break;
         case MOBILE32B:
             dp_.pattern.is_Generalize_Mobile = false;
+            dp_.pattern.is_mobile  = true;
             if(dp_.pattern.compressed) break;  // do nothing in when a graph is compressed mode
             srand((unsigned)time(NULL));
             dp_.rule = ruleTotEnds + (rand() % ruleEnd);
@@ -732,6 +742,7 @@ void nature::MakePatterns::handle_event(){
             break;
         case ELEMENTARY:
             dp_.pattern.is_Generalize_Mobile = false;
+            dp_.pattern.is_mobile = false;
             if(dp_.pattern.compressed) break;  // do nothing in when a graph is compressed mode
             srand((unsigned)time(NULL));
             dp_.rule = ruleStart + (rand() % ruleElemEnds);
@@ -739,6 +750,7 @@ void nature::MakePatterns::handle_event(){
             break;
         case TOTALISTIC:
             dp_.pattern.is_Generalize_Mobile = false;
+            dp_.pattern.is_mobile = false;
             if(dp_.pattern.compressed) break;  // do nothing in when a graph is compressed mode
             srand((unsigned)time(NULL));
             dp_.rule = ruleTotStarts + (rand() % ruleTotEnds);

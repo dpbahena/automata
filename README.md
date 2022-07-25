@@ -81,7 +81,7 @@ or
 
 or
 
-* press "SPACE" to type specific rule.
+* press "SPACE" to type specific rule after you pressed "N".
 
 Press "C" for COMPRESSED mode (compressed mode only works in certain shapes)
 Examples from "A New Kind of Science" by Stephen Wolfram:
@@ -98,7 +98,15 @@ Examples from "A New Kind of Science" by Stephen Wolfram:
 
  <h2>MOBILE-32 BITS     (I started it from 65536 to 4,294,967,295  or 2^32)</h2>
 
-See examples #1 and #2 or press "M" to for random rule or  press "SPACE" to type specific rule.
+* See examples #1 and #2
+
+or
+
+* press "M" to for random rule
+
+or
+
+* press "SPACE" to type specific rule after you pressed "M"
 
 Press "C" for COMPRESSED mode (compressed mode only works in certain shapes)
 Examples from "A New Kind of Science" by Stephen Wolfram:
@@ -147,7 +155,7 @@ from "A New Kind of Science" by Stephen Wolfram
 * Rule # 2174551651   page 77
 
 
-Anothers ones are :   
+Another ones are :   
 * Rule # 2174551975
 * Rule # 507100823   (really weird)
 * Rule # 507100809
