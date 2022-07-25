@@ -152,6 +152,7 @@ Anothers ones are :
 * Rule # 507100823   (really weird)
 * Rule # 507100809
 * Rule # 507100605 
+* Rule # 507100311   (weird too)
 
 COMPRESS MODE: Makes no sense in Generalized Mobiles
 
