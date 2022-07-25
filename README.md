@@ -147,7 +147,11 @@ from "A New Kind of Science" by Stephen Wolfram
 * Rule # 2174551651   page 77
 
 
-* Another one is :   Rule # 2174551975 
+Anothers ones are :   
+* Rule # 2174551975
+* Rule # 507100823   (really weird)
+* Rule # 507100809
+* Rule # 507100605 
 
 COMPRESS MODE: Makes no sense in Generalized Mobiles
 

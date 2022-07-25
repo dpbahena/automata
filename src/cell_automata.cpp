@@ -475,11 +475,55 @@ void nature::DisplayMatrix::reDraw(){
 }
 
 int nature::DisplayMatrix::user_input_rule(){
-    unsigned int input_rule;
-    std::cout << " Enter new rule 0 - 65535 :";
-    std::cin >> input_rule;
-    std::cin.ignore(100, '\n');  // clears buffer
     
+    unsigned int input_rule;
+    if(pattern.is_Generalize_Mobile){
+        std::cout << "Hardcoded rules to make your enter these rules easier: " << std::endl;
+        std::cout << "0: Rule # 267718719" << std::endl;
+        std::cout << "1: Rule # 2756018441" << std::endl;
+        std::cout << "2: Rule # 3378589909" << std::endl;
+        std::cout << "3: Rule # 4096999591" << std::endl;
+        std::cout << "4: Rule # 507100781" << std::endl;
+        std::cout << "5: Rule # 3635480489" << std::endl;
+        std::cout << "6: Rule # 2178553569" << std::endl;
+        std::cout << "7: Rule # 1369713987" << std::endl;
+        std::cout << "8: Rule # 2174551651" << std::endl;
+        std::cout << "9: Rule # 2174551975" << std::endl;
+        std::cout << "Or enter the full rule number yourself below ..." << std::endl;
+       
+    
+        
+        std::cout << " Enter new rule 0 -  :";
+        std::cin >> input_rule;
+        std::cin.ignore(100, '\n');  // clears buffer
+        if (input_rule == 0)
+            input_rule = 267718719;
+        else if(input_rule == 1)
+            input_rule = 2756018441;
+        else if(input_rule == 2)
+            input_rule = 3378589909;
+        else if(input_rule == 3)
+            input_rule = 4096999591;
+        else if(input_rule == 4)
+            input_rule = 507100781;
+        else if(input_rule == 5)
+            input_rule = 3635480489;
+        else if(input_rule == 6)
+            input_rule = 2178553569;
+        else if(input_rule == 7)
+            input_rule = 1369713987;
+        else if(input_rule == 8)
+            input_rule = 2174551651;
+        else if(input_rule == 9)
+            input_rule = 2174551975;
+        
+        
+    }else{
+        std::cout << " Enter new rule 0 -  :";
+        std::cin >> input_rule;
+        std::cin.ignore(100, '\n');  // clears buffer
+    }
+
     return input_rule;
 
 }
