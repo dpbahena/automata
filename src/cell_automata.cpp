@@ -173,8 +173,10 @@ void nature::DisplayMatrix::mapMatrix(){
                 if(matrix(indexi,indexj)==0){
                     //std::cout << "at matrix[" << indexi << ", " << indexj <<"] = " << matrix(indexi, indexj) << "the i is : " << i << "and : j "<< j << std::endl;
                     drawRect(color5.toneYellow,j,i,dot_size,dot_size);
+                    //drawArrow(colorRed, j,i, SOUTHEAST);
                 }else {
                     drawRect(color5.tonePurple,j,i,dot_size,dot_size);
+                    //drawArrow(colorYellow, j, i, SOUTHWEST);
                 }
             }
             indexj=start_column;
@@ -225,6 +227,7 @@ void nature::DisplayMatrix::mapMatrix(){
                 }else if (matrix(indexi, indexj) == 3){  // draw black cell with a dot
                     drawRect(colorBlack,j,i,dot_size,dot_size);
                     drawDot(colorRed,j,i, dot_size);
+                    
                 }
             }
             
@@ -295,7 +298,51 @@ void nature::DisplayMatrix::mapMatrix(){
     }
 }
 
+void nature::DisplayMatrix::drawArrow(unsigned long color, int x, int y, int direction){
+    XSetForeground(display_, DefaultGC(display_, screen_), color);
+    XPoint points[3];
+    int shape = Convex;
+    int mode = CoordModeOrigin;
+    short int x1,y1,x2,y2,x3,y3;
+    switch(direction){
+        case NORTH:
+            x1 = x + dot_size/3, y1 = y + 2 * dot_size/3 ,x2 = x + 2 * dot_size/3, y2 = y + 2 * dot_size/3, x3 = x + dot_size/2, y3 = y;
+            break;
+        case SOUTH:
+            x1 = x + dot_size/3, y1 = y + dot_size/3 ,x2 = x + dot_size/2, y2 = y + dot_size, x3 = x + 2* dot_size/3, y3 = y + dot_size/3;
+            break;
+        case EAST:
+            x1 = x + dot_size/3, y1 = y + dot_size/3 ,x2 = x + dot_size/3, y2 = y + 2 * dot_size/3,x3 = x + dot_size, y3 = y + dot_size/2;
+            break;
+        case WEST:
+            x1 = x + 2 * dot_size/3, y1 = y + dot_size/3 ,x2 = x + 2 * dot_size/3, y2 = y + 2 * dot_size/3, x3 = x, y3 = y + dot_size/2;
+            break;
+        case NORTHEAST:
+            x1 = x + dot_size/6, y1 = y + dot_size/2 ,x2 = x + dot_size/2, y2 = y + 5 * dot_size/6,x3 = x + 5 * dot_size/6, y3 = y + dot_size/6;
+            break;
+        case NORTHWEST:
+            x1 = x + dot_size/2, y1 = y + 5 * dot_size/6 ,x2 = x + 5 * dot_size/6, y2 = y + dot_size/2, x3 = x + dot_size/6, y3 = y + dot_size/6;
+            break;
+        case SOUTHEAST:
+            x1 = x + dot_size/2, y1 = y + dot_size/6 ,x2 = x + dot_size/6, y2 = y + dot_size/2, x3 = x + 5 * dot_size/6, y3 = y + 5 * dot_size/6;
+            break;
+        case SOUTHWEST:
+            x1 = x + dot_size/2, y1 = y + dot_size/6 ,x2 = x + 5 * dot_size/6, y2 = y + dot_size/2, x3 = x + dot_size/6, y3 = y + 5 * dot_size/6;
+            break;
+        default:  // NOTHING
+            break;
+    }
 
+    //x1 = x + dot_size/3, y1 = y + dot_size/3 ,x2 = x + dot_size/3, y2 = y + 2 * dot_size/3,x3 = x + dot_size, y3 = y + dot_size/2;
+    points[0].x = (short) x1;
+	points[0].y = (short) y1;
+	points[1].x = (short) x2;
+	points[1].y = (short) y2;
+	points[2].x = (short) x3;
+	points[2].y = (short) y3;
+    XFillPolygon(display_,window_,DefaultGC(display_,screen_),points, 3, shape, mode );
+
+}
 
 void nature::DisplayMatrix::drawRect(unsigned long color, int x, int y, int width, int height){
     XSetForeground(display_, DefaultGC(display_, screen_), color);

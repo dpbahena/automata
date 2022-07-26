@@ -12,6 +12,7 @@
 #include <sstream>
 
 
+
 using namespace Eigen;
 #define     PHYSICAL_WIDTH      1857  //1920   remove 63 dot-resolution from the left margen dedicated to ubuntu menu
 #define     PHYSICAL_HEIGHT     1057  // 1080  remove 23 dot-resolution (height) the top.. which is used by the program vsc
@@ -31,6 +32,7 @@ using namespace Eigen;
 #define     GENERALIZED     42   // g
 #define     SPEC_GENERALIZD 43   // h
 
+
 struct stats{
             float matrix_sum;
             float matrix_mean;
@@ -47,6 +49,8 @@ struct stats{
             int most_left;
             int most_right;
 };
+
+enum direction { NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST };
 
 struct groupColor1{  // triad
     unsigned long teal = 0x008080;
@@ -122,6 +126,7 @@ namespace nature{
 
         void drawRect(unsigned long color, int x, int y, int width, int height);
         void drawDot(unsigned long color, int x, int y, int radius); // draw small circle
+        void drawArrow(unsigned long color, int x, int y, int direction); // draw a small acute triangle 
         void reDraw();
 
         

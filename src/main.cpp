@@ -32,19 +32,7 @@ int main(int args, char **argv){
        
     nature::MakePatterns makepatterns(width, height, rule, factor); 
     makepatterns.run();
-    // unsigned int start = 2087;
-    // unsigned int end = 4294967295;
-    // srand((unsigned)time(NULL));
-    // for(int x=0; x<10; x++){        
-
-    //     // Offset 100 and range 201 to generate random numbers between 100 and 300
-
-    //     unsigned int random = start + (rand() % end);
-
-    //     std::cout<<random<< std::endl; ;
-    //     shifting(random);
-    // }
-    
+        
     return 0; 
 }
 
