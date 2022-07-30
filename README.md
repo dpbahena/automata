@@ -4,7 +4,7 @@
 
 
 Install dependencies:
-sudo apt install libeigen3-de
+sudo apt install libeigen3-dev
 
 
 1. Create a directory 
