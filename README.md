@@ -3,6 +3,10 @@
 <h1>Linux/ubuntu</h1>
 
 
+Install dependencies:
+sudo apt install libeigen3-de
+
+
 1. Create a directory 
     mkdir dev
 2. cd dev
