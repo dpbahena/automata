@@ -165,6 +165,16 @@ Another ones are :
 * Rule # 507100809
 * Rule # 507100605 
 * Rule # 507100311   (weird too)
+* Rule # 565654185
+* Rule # 565654441
+* Rule # 565654373
+* Rule # 1237072753
+* Rule # 1849509755
+* Rule # 1849510151
+* Rule # 1849510167
+* Rule # 1849510199
+* Rule # 1849510241
+* Rule # 1260947305
 
 COMPRESS MODE: Makes no sense in Generalized Mobiles
 
