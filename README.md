@@ -175,6 +175,12 @@ Another ones are :
 * Rule # 1849510199
 * Rule # 1849510241
 * Rule # 1260947305
+* Rule # 1661025641
+* Rule # 1661025705
+* Rule # 1661026217
+* Rule # 760640273
+* Rule # 1677524630 (its even) when initial state is dot on a black square
+* Rule # 1677524663  initial state are dot on black square and dot on white square
 
 COMPRESS MODE: Makes no sense in Generalized Mobiles
 

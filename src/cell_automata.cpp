@@ -835,7 +835,7 @@ nature::MatrixPattern::MatrixPattern(ArrayXXf &matrix, unsigned int rule, stats 
     cols = matrix.cols();
     this->rule = rule;
     
-    matrix(0,cols/2) = 1;   //initial state of the matrix
+    //matrix(0,cols/2) = 1;   //initial state of the matrix
     
     getShape(matrix, pattern);
     
@@ -849,6 +849,7 @@ void nature::MatrixPattern::getShape(ArrayXXf &matrix, stats &pattern){
     
     if (rule >= 0 && rule <= 255){    // binary
         pattern.is_8bit = true;
+        matrix(0,cols/2) = 1;   //initial state of the matrix
         std::cout << "BINARY 0-255" << std::endl;
         for (int i = 1; i < rows-1;i++)
             for(int j = 1; j < cols -1 ; j++){
@@ -861,6 +862,7 @@ void nature::MatrixPattern::getShape(ArrayXXf &matrix, stats &pattern){
             }
     }else if (rule >= 256 && rule <= 2186){    // terneary  (base 3)
         pattern.is_ternary = true;
+        matrix(0,cols/2) = 1;   //initial state of the matrix
         std::cout <<  "TERNEARIO 256 - 2186" << std::endl; 
         decimal_Base3(rule);
         base3 = ss.str();
@@ -1164,7 +1166,9 @@ void nature::MatrixPattern::getShape(ArrayXXf &matrix, stats &pattern){
         bin32 = dec_to_32bit();
         std::cout << "32 bin: " << bin32 << std::endl;
         pattern.is_mobile = true;
-        matrix(0,cols/2) = 2;   //initial state of the matrix (dot on white cell, 3 is a dot on a black cell)
+        matrix(0, 3 * cols/4) = 2;   //initial state of the matrix (dot on white cell, 3 is a dot on a black cell)
+        matrix(0,cols/4) = 3;   //initial state of the matrix (dot on white cell, 3 is a dot on a black cell)
+
         pattern.most_left = cols/2;
         pattern.most_right = cols/2;
         //std::cout << "Rule : " << rule << std::endl; 
